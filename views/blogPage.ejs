@@ -1,0 +1,47 @@
+<%- include("partials/Header") %> 
+
+<!-- Navigation bar -->
+<%- include("partials/NavBar") %> 
+
+<div class="container d-flex flex-column align-items-center p-0 w-100">
+  <div class="blogNav d-flex align-items-center justify-content-between w-100 h-100 p-3 my-2">
+    <a href="/viewBlog/<%= prevBlog %> " class="prevBlog navBtn btn <%= prevBlog ?"":"disabled" %> " >
+      <i class="fa-solid fa-chevron-left text-white"></i>
+    </a>
+    <h2 class="blogHeading"> <%= blogData.title %>  </h2>
+    <a href="/viewBlog/<%= nextBlog %> " class="nextBlog navBtn btn <%= nextBlog ?'':'disabled' %>  ">
+      <i class="fa-solid fa-chevron-right text-white"></i>
+    </a>
+  </div>
+  <div class="blogPage d-flex w-100 h-100 p-4 my-2">
+    <div class="blogPostDetails d-flex flex-column p-4">
+      <div class="blogUserInfo my-2">
+        <i class="avatar fa-solid fa-user bg-white p-2 fs-6 rounded-3"></i>
+        <a href="<%= blogData.emailId %> " class="blog-user-id h6 text-decoration-none text-black mx-2" id="<%= blogId %> ">
+          <%= blogData.userName %> 
+        </a> 
+      </div>
+      <div class="blogPostDate my-2">
+        <i class="fa-solid fa-calendar bg-white p-2 fs-6 rounded-3"></i>
+        <span class="blog-user-id h6 text-black  mx-2">
+          <%= blogData.date %> 
+        </span>
+      </div>
+      <div class="blogSummary my-2">
+        <span class="blog-user-id h5 text-black  mx-0">
+          Summary: 
+        </span> 
+        <p class="blogSummary fs-5">
+          <%= blogData.summary %> 
+        </p>
+      </div>
+    </div>
+    <div class="blogPageContent p-4">
+      <h3>Full Blog: </h3>
+      <p class="f-4"> <%- blogData.content %> </p>
+    </div>
+  </div>
+</div>
+
+
+<%- include("partials/Footer") %> 

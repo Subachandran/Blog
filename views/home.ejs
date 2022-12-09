@@ -1,0 +1,41 @@
+<%- include("partials/Header") -%> 
+
+  <!-- Navigation bar -->
+<%- include("partials/NavBar") %> 
+  
+  <!-- Body  -->
+  <div class="container d-flex flex-column align-items-center p-0">
+    <% if (introCard) { %> 
+    <div class="introCard mx-auto my-5 w-100 d-flex align-items-center justify-content-between row">
+      <div class="prev d-flex justify-content-center align-items-center col-1 h-100 text-center rounded-4"><i class="fa-solid fa-chevron-left text-white"></i></div> 
+      <p class="introContent p-4 m-0 col-10 h-100 d-flex align-items-center justify-content-between text-center rounded-4">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem veniam nostrum impedit doloribus libero, itaque enim, adipisci ratione similique amet animi laudantium vitae sit blanditiis, pariatur reiciendis commodi recusandae quod.
+      </p>
+      <div class="next d-flex justify-content-center align-items-center col-1 h-100 text-center rounded-4"><i class="fa-solid fa-chevron-right text-white"></i></div>
+    </div>
+    <% } %> 
+
+    <div class="blogs w-100 pb-4 d-flex justify-content-between">
+      <% for (let blogId in blogData) { %> 
+      <div class="blog col-md-12 d-flex flex-column justify-content-between rounded-4" id="<%= blogId %> ">
+        <div class="blogHeader d-flex align-items-center">
+          <div class="userDetails d-flex align-items-center">
+            <i class="avatar fa-solid fa-user "></i>
+            <a href="<%= blogData[blogId].emailId %> " class="blog-user-id h6 text-decoration-none text-black mb-0 mx-2" id="<%= blogId %> "><%= blogData[blogId].userName %> </a>
+          </div>
+          <h6 class="mb-0 ms-auto fst-italic fw-normal text-black">Posted on: <%= blogData[blogId].date %>  </h6>
+        </div>
+        <h1 class="blogTitle h2 py-2 m-0" id="{blogTitle}"><%= blogData[blogId].title %></h1>
+        <p class="blogContent fs-6 position-relative mt-0 mb-auto">
+          <%= blogData[blogId].summary %> 
+        </p>
+        <a href="/viewBlog/<%= blogData[blogId]._id %> " class="blogLink ms-auto text-decoration-none px-3 py-1 mt-2 btn">View blog</a>
+      </div>
+      <% } %> 
+    </div>
+
+  </div>
+
+<!-- Footer -->
+<%- include("partials/Footer") %> 
+
