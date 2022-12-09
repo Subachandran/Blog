@@ -65,6 +65,7 @@ let pageTitle = "Journal-Home Page";
 let blogId;
 
 //////////////////////////////// start the server
+const portNum = process.env.PORT || 3000
 app.listen(3000, function () {
   console.log("Server started at port 3000....");
   console.log(currentDateString);
