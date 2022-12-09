@@ -6,11 +6,11 @@
 <div class="container d-flex flex-column align-items-center p-0 w-100">
   <div class="blogNav d-flex align-items-center justify-content-between w-100 h-100 p-3 my-2">
     <a href="/viewBlog/<%= nextBlog %> " class="nextBlog navBtn btn <%= nextBlog ?'':'disabled' %>  ">
-      <i class="fa-solid fa-chevron-right text-white"></i>
+      <i class="fa-solid fa-chevron-left text-white"></i>
     </a>
     <h2 class="blogHeading"> <%= blogData.title %>  </h2>
     <a href="/viewBlog/<%= prevBlog %> " class="prevBlog navBtn btn <%= prevBlog ?"":"disabled" %> " >
-      <i class="fa-solid fa-chevron-left text-white"></i>
+      <i class="fa-solid fa-chevron-right text-white"></i>
     </a>
   </div>
   <div class="blogPage d-flex w-100 h-100 p-4 my-2">
