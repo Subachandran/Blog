@@ -64,12 +64,12 @@ let currentDateString = currentDate.toLocaleDateString(currentDate, {
 let pageTitle = "Journal-Home Page";
 let blogId;
 
-//////////////////////////////// start the server
+//////////////////////////////// start server
+// Port number
 const portNum = process.env.PORT || 3000
-app.listen(3000, function () {
-  console.log("Server started at port 3000....");
-  console.log(currentDateString);
-});
+app.listen(portNum, function() {
+  console.log(`Server initiated at port number ${portNum}...`)
+})
 
 //////////////////////////////// declare home page (root)
 app.get("/", async function (req, res) {
