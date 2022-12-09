@@ -94,7 +94,7 @@ app
   .get(function (req, res) {
     res.render("signIn");
   })
-  .post("/signIn", async function (req, res) {
+  .post(async function (req, res) {
     let [emailId, password] = [req.body.email, req.body.password];
     let userCred = await userModel.findById(emailId);
     if (!userCred) res.send(false);
@@ -112,7 +112,7 @@ app
   .get(function (req, res) {
     res.render("signup");
   })
-  .post("/signUp", async function (req, res) {
+  .post(async function (req, res) {
     let newEmail = req.body.email,
       newUserName = req.body.userName,
       newPwd = req.body.password;
@@ -143,7 +143,7 @@ app
       pageTitle: pageTitle,
     });
   })
-  .post("/newBlog", async function (req, res) {
+  .post(async function (req, res) {
     let userEmailId = req.cookies.emailId;
     let curUserInfo = await userModel.findById(userEmailId);
     let newEntry = new blogModel({
