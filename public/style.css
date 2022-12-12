@@ -19,6 +19,7 @@ body {
 
 .navBar {
   position:fixed;
+  z-index: 2000;
   width: 100%;
   min-width: fit-content;
   height: 3em;
