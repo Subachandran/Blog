@@ -24,8 +24,7 @@ function escape(htmlStr) {
 
 /////////////////////////////// MongoDB
 // connect
-let uri =
-  "mongodb+srv://JKSdb:JKS-mongo-shell-2001...@jks.tqqp75s.mongodb.net/Blog";
+let uri = process.env.MONGODB_CONNECTION_URI;
 mongoose.connect(
   uri,
   () => console.log("Connected DB succesfully"),
