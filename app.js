@@ -2,7 +2,6 @@
 
 // import required modules
 const express = require("express");
-const bodyParser = require("body-parser");
 const fs = require("fs");
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
@@ -10,7 +9,7 @@ const mongoose = require("mongoose");
 // call express
 const app = express();
 // use bodyParser
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 // use cookieParser
 app.use(cookieParser());
 // set-up public folder
